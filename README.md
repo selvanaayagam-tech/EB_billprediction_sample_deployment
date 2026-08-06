@@ -9,7 +9,7 @@ In a complete, production-style project, multiple models would be trained and co
 - **`app.py`** - the actual deployed app code (Streamlit). This is what runs live on Streamlit Community Cloud. It loads the trained model files directly from Hugging Face and serves the interactive bill calculator.
 - **`main.py`** - the training pipeline script. Run this to clean the data, train the model, evaluate it, and save the model/scaler/feature files. Not part of the live app, this is the "how the model was built" file.
 - **`*.ipynb`** - the full exploratory notebook: EDA, data cleaning steps, outlier detection, visualizations, and the training pipeline in its original working form. Check this file for the complete step-by-step walkthrough of the approach.
-- **Model files (`.pkl`)** — NOT stored in this repo. The trained model, scaler, and feature list are hosted on Hugging Face: **[https://huggingface.co/SelvaMech/electricity-bill-regression/tree/main]**. `app.py` downloads them automatically at runtime.
+- **Model files (`.pkl`)** — NOT stored in this repo. The trained model, scaler, and feature list are hosted on Hugging Face: **https://huggingface.co/SelvaMech/electricity-bill-regression/tree/main**. `app.py` downloads them automatically at runtime.
 
 ## 1. Project Overview
 A Linear Regression model that predicts a household's daily electricity consumption from appliance usage hours, and scales it up to estimate a full monthly bill using the actual LT Commercial tariff slab structure. Built as a "what-if" calculator, adjust your appliance hours and instantly see how your estimated bill changes.
