@@ -6,9 +6,9 @@ This is a **practice/study project** built specifically to learn end-to-end mode
 In a complete, production-style project, multiple models would be trained and compared (Linear Regression, Random Forest, Gradient Boosting, etc.), with the best-performing one (highest R², lowest error) selected for deployment. A future version of this project will do exactly that, multiple models compared inside the notebook, with the best one selected and used in the final `main.py`. For now, this repo focuses on getting the deployment pipeline right.
 
 ## 📂 Which File Is Which
-- **`app.py`** — the actual deployed app code (Streamlit). This is what runs live on Streamlit Community Cloud. It loads the trained model files directly from Hugging Face and serves the interactive bill calculator.
-- **`main.py`** — the training pipeline script. Run this to clean the data, train the model, evaluate it, and save the model/scaler/feature files. Not part of the live app, this is the "how the model was built" file.
-- **`*.ipynb`** — the full exploratory notebook: EDA, data cleaning steps, outlier detection, visualizations, and the training pipeline in its original working form. Check this file for the complete step-by-step walkthrough of the approach.
+- **`app.py`** - the actual deployed app code (Streamlit). This is what runs live on Streamlit Community Cloud. It loads the trained model files directly from Hugging Face and serves the interactive bill calculator.
+- **`main.py`** - the training pipeline script. Run this to clean the data, train the model, evaluate it, and save the model/scaler/feature files. Not part of the live app, this is the "how the model was built" file.
+- **`*.ipynb`** - the full exploratory notebook: EDA, data cleaning steps, outlier detection, visualizations, and the training pipeline in its original working form. Check this file for the complete step-by-step walkthrough of the approach.
 - **Model files (`.pkl`)** — NOT stored in this repo. The trained model, scaler, and feature list are hosted on Hugging Face: **[Hugging Face Model repo link]**. `app.py` downloads them automatically at runtime.
 
 ## 1. Project Overview
@@ -42,8 +42,8 @@ A synthetically generated dataset simulating 9 years (2017-2025) of daily electr
 The model achieved a very high R-Squared score, closely recovering the true underlying relationship between appliance usage and daily consumption. (Note: this dataset was synthetically generated using a deterministic formula with no added noise, which is why the fit is exceptionally close; real-world smart meter data would be expected to show more variance.)
 
 ## 7. Live Demo
-- **Try the app:** [Streamlit app link]
-- **Model files:** [Hugging Face Model repo link]
+- **Try the app:** [https://ebbillpredictionsampledeployment-bpne9za7xb7p2kkp7eejza.streamlit.app]
+- **Model files:** [SelvaMech/electricity-bill-regression]
 
 ## 8. Key Learnings / Future Work
 - Learned the full deployment pipeline: train → save with joblib → host on Hugging Face → serve via Streamlit Community Cloud.
