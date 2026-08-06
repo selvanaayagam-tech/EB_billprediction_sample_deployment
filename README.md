@@ -42,8 +42,8 @@ A synthetically generated dataset simulating 9 years (2017-2025) of daily electr
 The model achieved a very high R-Squared score, closely recovering the true underlying relationship between appliance usage and daily consumption. (Note: this dataset was synthetically generated using a deterministic formula with no added noise, which is why the fit is exceptionally close; real-world smart meter data would be expected to show more variance.)
 
 ## 7. Live Demo
-- **Try the app:** [https://ebbillpredictionsampledeployment-bpne9za7xb7p2kkp7eejza.streamlit.app]
-- **Model files:** [SelvaMech/electricity-bill-regression]
+- **Try the app:** https://ebbillpredictionsampledeployment-bpne9za7xb7p2kkp7eejza.streamlit.app
+- **Model files:** https://huggingface.co/SelvaMech/electricity-bill-regression
 
 ## 8. Key Learnings / Future Work
 - Learned the full deployment pipeline: train → save with joblib → host on Hugging Face → serve via Streamlit Community Cloud.
