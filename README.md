@@ -9,7 +9,7 @@ In a complete, production-style project, multiple models would be trained and co
 - **`app.py`** - the actual deployed app code (Streamlit). This is what runs live on Streamlit Community Cloud. It loads the trained model files directly from Hugging Face and serves the interactive bill calculator.
 - **`main.py`** - the training pipeline script. Run this to clean the data, train the model, evaluate it, and save the model/scaler/feature files. Not part of the live app, this is the "how the model was built" file.
 - **`*.ipynb`** - the full exploratory notebook: EDA, data cleaning steps, outlier detection, visualizations, and the training pipeline in its original working form. Check this file for the complete step-by-step walkthrough of the approach.
-- **Model files (`.pkl`)** — NOT stored in this repo. The trained model, scaler, and feature list are hosted on Hugging Face: **[Hugging Face Model repo link]**. `app.py` downloads them automatically at runtime.
+- **Model files (`.pkl`)** — NOT stored in this repo. The trained model, scaler, and feature list are hosted on Hugging Face: **[https://huggingface.co/SelvaMech/electricity-bill-regression/tree/main]**. `app.py` downloads them automatically at runtime.
 
 ## 1. Project Overview
 A Linear Regression model that predicts a household's daily electricity consumption from appliance usage hours, and scales it up to estimate a full monthly bill using the actual LT Commercial tariff slab structure. Built as a "what-if" calculator, adjust your appliance hours and instantly see how your estimated bill changes.
@@ -47,7 +47,12 @@ The model achieved a very high R-Squared score, closely recovering the true unde
 
 ## 8. Key Learnings / Future Work
 - Learned the full deployment pipeline: train → save with joblib → host on Hugging Face → serve via Streamlit Community Cloud.
-- Learned why feature scaling doesn't affect OLS Linear Regression's predictions, but does affect coefficient interpretability.
 - Learned to separate deterministic business logic (tariff calculation) from the ML prediction step, rather than trying to have a model learn a fixed formula.
 - Learned the importance of relative/hosted file paths over hardcoded local paths when preparing code for deployment.
 - **Future work:** expand this into a full model comparison project, train multiple models (Random Forest, Gradient Boosting, etc.) inside the notebook, evaluate each, and select the best-performing one for the final deployed `main.py`. Also planning a SARIMA time-series model on the same dataset to forecast future monthly consumption using its seasonal pattern.
+
+## 9. Limitations
+- Trained on synthetic, single-household data, not real smart-meter readings.
+- Assumes a fixed electricity tariff rate across all years; real tariffs are revised periodically.
+- Does not account for appliance efficiency (star ratings) or seasonal usage patterns as separate model inputs.
+- Should not be used as a substitute for an actual utility bill; it is an educational estimation tool.
