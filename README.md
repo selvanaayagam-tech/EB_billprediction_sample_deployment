@@ -47,6 +47,7 @@ The model achieved a very high R-Squared score, closely recovering the true unde
 
 ## 8. Key Learnings / Future Work
 - Learned the full deployment pipeline: train → save with joblib → host on Hugging Face → serve via Streamlit Community Cloud.
+- Learned the IQR (Interquartile Range) method for detecting and removing outliers, a genuinely new technique for me, and understood why it's preferred over arbitrary cutoffs since it's data-driven and adapts to the actual spread of the data.
 - Learned to separate deterministic business logic (tariff calculation) from the ML prediction step, rather than trying to have a model learn a fixed formula.
 - Learned the importance of relative/hosted file paths over hardcoded local paths when preparing code for deployment.
 - **Future work:** expand this into a full model comparison project, train multiple models (Random Forest, Gradient Boosting, etc.) inside the notebook, evaluate each, and select the best-performing one for the final deployed `main.py`. Also planning a SARIMA time-series model on the same dataset to forecast future monthly consumption using its seasonal pattern.
